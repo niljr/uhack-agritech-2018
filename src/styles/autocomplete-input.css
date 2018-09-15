@@ -1,0 +1,14 @@
+.autocomplete-input__list {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    background-color: #f6f7f7;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12); }
+    .autocomplete-input__list-item {
+      padding: 5px 10px;
+      margin-bottom: 0;
+      cursor: pointer;
+      font-family: "Roboto", Helvetica, Arial, sans-serif; }
+      .autocomplete-input__list-item:hover, .autocomplete-input__list-item.is-active {
+        background-color: #dbdfdf; }
+  
