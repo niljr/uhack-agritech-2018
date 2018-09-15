@@ -23,7 +23,6 @@ class Town extends React.Component {
                         <Table.Row>
                             <Table.Cell>
                             <Header as='h4' image>
-                                <Image src='/images/avatar/small/lena.png' rounded size='mini' />
                                 <Header.Content>
                                 Banana
                                 </Header.Content>
@@ -35,7 +34,6 @@ class Town extends React.Component {
                         <Table.Row>
                             <Table.Cell>
                             <Header as='h4' image>
-                                <Image src='/images/avatar/small/lena.png' rounded size='mini' />
                                 <Header.Content>
                                 Palay
                                 </Header.Content>
@@ -47,7 +45,6 @@ class Town extends React.Component {
                         <Table.Row>
                             <Table.Cell>
                             <Header as='h4' image>
-                                <Image src='/images/avatar/small/lena.png' rounded size='mini' />
                                 <Header.Content>
                                 Banana
                                 </Header.Content>

@@ -49,6 +49,9 @@ export default function getRoutes(isAuthed, dispatch, location) {
                             <Link to='/'>Crops List</Link>
                         </NavItem>
                         <NavItem>
+                            <Link to='/towns'>Towns</Link>
+                        </NavItem>
+                        <NavItem>
                             <Link to='/'>Products Inventory</Link>
                         </NavItem>
                     </Nav>
