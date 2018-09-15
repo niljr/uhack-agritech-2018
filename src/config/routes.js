@@ -4,6 +4,7 @@ import AddFarmer from '../components/AddFarmer';
 import FarmersList from '../components/FarmersList';
 import AddCrops from '../components/AddCrops';
 import Towns from '../components/Towns';
+import Farmer from '../components/Farmer';
 import { Row, Col, Nav, NavItem } from 'reactstrap';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -24,6 +25,10 @@ const routes = [
     {
         path: '/towns',
         main: () => <Towns />
+    },
+    {
+        path: '/farmer/:id',
+        main: () => <Farmer />        
     }
 ];
 
@@ -66,7 +71,7 @@ export default function getRoutes(isAuthed, dispatch, location) {
                     ))}
                 </Col>
 
-                <Col lg={10} className='p-5'>
+                <Col lg={10} className='dashboard__content p-5'>
                     {routes.map((route, index) => (
                         <Route
                             key={index}
