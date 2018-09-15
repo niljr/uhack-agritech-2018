@@ -1,12 +1,15 @@
 import React from 'react';
+import { Row, Col, Nav, NavItem } from 'reactstrap';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Image, Label, Menu } from 'semantic-ui-react'
+
 import Dashboard from '../components/Dashboard';
 import AddFarmer from '../components/AddFarmer';
 import FarmersList from '../components/FarmersList';
 import AddCrops from '../components/AddCrops';
 import Towns from '../components/Towns';
 import Farmer from '../components/Farmer';
-import { Row, Col, Nav, NavItem } from 'reactstrap';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import PriceList from '../components/PriceList';
 
 const routes = [
     {
@@ -29,6 +32,10 @@ const routes = [
     {
         path: '/farmer/:id',
         main: () => <Farmer />
+    },
+    {
+        path: '/price-list',
+        main: () => <PriceList />
     }
 ];
 
@@ -36,34 +43,32 @@ export default function getRoutes(isAuthed, dispatch, location) {
     return (
         <Router>
             <Row className='h-100'>
-                <Col lg={3} className='border-right'>
+                <Col lg={2} className='border-right' style={{ backgroundColor: 'cadetblue' }}>
+                <Image src='/images/logo.jpg' size='small' />
                     <Nav vertical className='p-5'>
                         <NavItem>
-                            <Link to='/'>Dashboard</Link>
+                            <Link to='/'><h1>Dashboard</h1></Link>
                         </NavItem>
                         <NavItem>
-                            <Link to='/add-farmers'>Add Farmer</Link>
+                            <Link to='/farmers-list'><h1>Farmers</h1></Link>
                         </NavItem>
                         <NavItem>
-                            <Link to='/farmers-list'>Farmers' List</Link>
-                        </NavItem>
-                        <NavItem>
-                            <Link to='/Add-crops'>Add Crops</Link>
-                        </NavItem>
-                        <NavItem>
-                            <Link to='/'>Crops List</Link>
+                            <Link to='/'>Crops</Link>
                         </NavItem>
                         <NavItem>
                             <Link to='/towns'>Towns</Link>
                         </NavItem>
                         <NavItem>
-                            <Link to='/farm-details'>Farm Details</Link>
-                        </NavItem>
-                        <NavItem>
-                            <Link to='/'>Products Inventory</Link>
+                            <Link to='/price-list'>Price List</Link>
                         </NavItem>
                     </Nav>
-
+                    {/* <Menu fluid vertical tabular>
+                        <Menu.Item name='bio' active={'bio'} />
+                        <Menu.Item name='farmers' />
+                        <Menu.Item name='crops' />
+                        <Menu.Item name='towns' />
+                        <Menu.Item name='price list' />
+                    </Menu> */}
                     {routes.map((route, index) => (
                         <Route
                             key={index}
@@ -74,7 +79,7 @@ export default function getRoutes(isAuthed, dispatch, location) {
                     ))}
                 </Col>
 
-                <Col lg={9} className='dashboard__content p-5'>
+                <Col lg={10} className='dashboard__content p-5'>
                     {routes.map((route, index) => (
                         <Route
                             key={index}
