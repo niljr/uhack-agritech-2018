@@ -3,6 +3,7 @@ import Dashboard from '../components/Dashboard';
 import AddFarmer from '../components/AddFarmer';
 import FarmersList from '../components/FarmersList';
 import AddCrops from '../components/AddCrops';
+import FarmerDetails from '../components/FarmerDetails';
 import Towns from '../components/Towns';
 import Farmer from '../components/Farmer';
 import { Row, Col, Nav, NavItem } from 'reactstrap';
@@ -28,7 +29,7 @@ const routes = [
     },
     {
         path: '/farmer/:id',
-        main: () => <Farmer />        
+        main: () => <FarmerDetails />
     }
 ];
 
@@ -36,7 +37,7 @@ export default function getRoutes(isAuthed, dispatch, location) {
     return (
         <Router>
             <Row className='h-100'>
-                <Col lg={2} className='border-right'>
+                <Col lg={3} className='border-right'>
                     <Nav vertical className='p-5'>
                         <NavItem>
                             <Link to='/'>Dashboard</Link>
@@ -57,6 +58,9 @@ export default function getRoutes(isAuthed, dispatch, location) {
                             <Link to='/towns'>Towns</Link>
                         </NavItem>
                         <NavItem>
+                            <Link to='/farm-details'>Farm Details</Link>
+                        </NavItem>
+                        <NavItem>
                             <Link to='/'>Products Inventory</Link>
                         </NavItem>
                     </Nav>
@@ -71,7 +75,7 @@ export default function getRoutes(isAuthed, dispatch, location) {
                     ))}
                 </Col>
 
-                <Col lg={10} className='dashboard__content p-5'>
+                <Col lg={9} className='dashboard__content p-5'>
                     {routes.map((route, index) => (
                         <Route
                             key={index}
