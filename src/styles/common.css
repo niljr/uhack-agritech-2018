@@ -1,3 +1,17 @@
 .app-container {
     height: 100vh;
 }
+
+.dashboard__content {
+    height: 100%;
+    overflow-y: scroll;
+    color: black;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: black;
+}
