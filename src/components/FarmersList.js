@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { Col, Row, Card, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import Spinner from './Spinner';
-import farmers from '../data.json';
+import farmers from '../json/data.json';
 
 export default class FarmersList extends PureComponent {
     state = {
