@@ -6,12 +6,12 @@ export default class FarmDetails extends React.Component {
   render() {
     return (
         <div>
-            <ButtonGroup>
+            {/* <ButtonGroup>
                 <Button>Request Loan</Button>
                 <Button>Request Machineary</Button>
                 <Button>Sell Crops</Button>
                 <Button>Buy Inputs</Button>
-            </ButtonGroup>
+            </ButtonGroup> */}
             <Form>
                     <Form.Group unstackable widths={2}>
                         <Form.Input label='First name' placeholder='First name' />

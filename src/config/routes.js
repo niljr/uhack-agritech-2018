@@ -3,7 +3,6 @@ import Dashboard from '../components/Dashboard';
 import AddFarmer from '../components/AddFarmer';
 import FarmersList from '../components/FarmersList';
 import AddCrops from '../components/AddCrops';
-import FarmerDetails from '../components/FarmerDetails';
 import Towns from '../components/Towns';
 import Farmer from '../components/Farmer';
 import { Row, Col, Nav, NavItem } from 'reactstrap';
@@ -29,7 +28,7 @@ const routes = [
     },
     {
         path: '/farmer/:id',
-        main: () => <FarmerDetails />
+        main: () => <Farmer />
     }
 ];
 
