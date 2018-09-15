@@ -1,143 +1,88 @@
 import React, { PureComponent } from 'react';
-import { Input, Table, Icon, Dropdown } from 'semantic-ui-react';
+import { Header, Input, Table, Icon, Dropdown } from 'semantic-ui-react';
+import { Modal, ModalBody, ModalHeader, ModalFooter, Button } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import Autocomplete from './Autocomplete';
+import Invoice from './Invoice';
 import inputs from '../json/inputs.json';
 
 export default class SellInputs extends PureComponent {
     state = {
-        value: '',
-        newInput: {},
-        qty: 1,
-        inputs: [],
-        price: 0
+        isOpen: false, 
+        isPayment: false,
+        total: 0
     }
 
-    handleChange = (value) => {
-        const newInput = inputs.find(input => value === input.description);
+    handleSumbit = async (total) => {
+        await this.setState({
+            total
+        });
 
+        this.handleToggle();
+    }
+
+    handleToggle = () => {
         this.setState({
-            newInput: newInput ? newInput : {},
-            price: newInput ? newInput.price : 0,
-            value
+            isOpen: !this.state.isOpen
         });
     }
 
-    handleQtyChange = (e) => {
-        const value = e.target.value;
-        const { newInput } = this.state;
-
-        if (value > newInput.availableQty) {
-            return;
-        }
+    handleReceivePayment = (type, isPayment = true) => {
+        isPayment && this.handleToggle();
 
         this.setState({
-            qty: value ? value : 1,
-            price: value ? value * newInput.price : newInput.price * 1
+            isPayment,
+            type
         });
     }
 
-    add = async () => {
-        const { newInput, qty, price } = this.state;
-
-        if (Object.keys(newInput).length > 0) {
-            let inputs = this.state.inputs;
-            const input = {
-                id: inputs.length + 1,
-                description: newInput.description,
-                qty,
-                price: newInput.price,
-                total: price
-            }
-            
-            inputs.push(input);
-            await this.setState({
-                inputs: [...inputs],
-                newInput: {},
-                value: '',
-                qty: 1
-            })
-        }
+    successPayment = async () => {
+        await this.setState({
+            isPayment: false
+        })
+        
+        alert("Successfully Paid!");
     }
 
     render() {
-        const data = inputs.map(input => input.description);
-        const { newInput, qty } = this.state;
-        const isNewInput = Object.keys(newInput).length > 0;
-        let total = 0;
-        this.state.inputs.forEach(input => total = total + input.total);
-
+        console.log(this.props)
         return (
-            <Table basic='very' striped>
-                <Table.Header>
-                    <Table.Row>
-                        <Table.HeaderCell className='border-top-0'>QTY</Table.HeaderCell>
-                        <Table.HeaderCell className='border-top-0'>DESCRIPTION</Table.HeaderCell>
-                        <Table.HeaderCell className='border-top-0'>PRICE</Table.HeaderCell>
-                        <Table.HeaderCell className='border-top-0'>TOTAL</Table.HeaderCell>
-                    </Table.Row>
-                </Table.Header>
+            <div>
+                <Header as='h2' icon textAlign='center'>
+                    Sell Inputs
+                </Header>
+                <Invoice
+                    type='sell'
+                    data={inputs}
+                    onSumbit={this.handleSumbit}/>
+                
+                <Modal
+                    centered
+                    isOpen={this.state.isOpen} toggle={this.handleToggle} className={this.props.className}>
+                    <ModalHeader toggle={this.handleToggle}>Receive Peyment</ModalHeader>
+                    <ModalBody>
+                        What mode of payment to use?
+                        <br />
+                        <div className='d-flex justify-content-around pt-4 pb-2'>
+                            <Button className='w-50 mr-3' color="primary" onClick={() => this.handleReceivePayment('online')}>Online Payment</Button>
+                            <Button className='w-50 ml-3' color="secondary" onClick={() => this.handleReceivePayment('cash')}>Cash</Button>{' '}
+                        </div>
+                    </ModalBody>
+                </Modal>
 
-                <Table.Body>
-                    <Table.Row>
-                        <Table.Cell>
-                            <Input
-                                label={{ basic: true, content: isNewInput ? newInput.unit : '0.00' }}
-                                disabled={!isNewInput}
-                                type='number'
-                                labelPosition='right'
-                                placeholder='Enter qty...'
-                                name='quantity'
-                                value={this.state.qty}
-                                min='1'
-                                max={isNewInput ? `${newInput.availableQty}` : '1'}
-                                onChange={this.handleQtyChange}
-                            />
-                        </Table.Cell>
-                        <Table.Cell className='w-50'>
-                            <Autocomplete
-                                id='input-list'
-                                type='text'
-                                name='input-list'
-                                placeholder='Enter input name'
-                                value={this.state.value}
-                                onSelectItem={this.handleChange}
-                                list={data} />
-                        </Table.Cell>
-                        <Table.Cell textAlign='right'>
-                            {isNewInput ? newInput.price : '0.00'}
-                        </Table.Cell>
-                        <Table.Cell className='d-flex justify-conten-between'>
-                            <p className='w-75'>{isNewInput ? this.state.price.toFixed(2) : '0.00'}</p>
-                            <div onClick={this.add}>
-                                <Icon disabled={!isNewInput} name='add circle' size='large'/>
-                            </div>
-                        </Table.Cell>
-                    </Table.Row>
-                    {this.state.inputs.map(input => 
-                        <Table.Row key={input.id}>
-                            <Table.Cell textAlign='center'>
-                                {input.qty}
-                            </Table.Cell>
-                            <Table.Cell className='w-50'>{input.description}</Table.Cell>
-                            <Table.Cell textAlign='right'>
-                                {input.price}
-                            </Table.Cell>
-                            <Table.Cell className='d-flex justify-conten-between'>
-                                <p className='w-75'>{input.total}</p>
-                            </Table.Cell>
-                        </Table.Row>
-                    )}
-
-                    <Table.Row>
-                        <Table.Cell colSpan='3' textAlign='right'>
-                            TOTAL
-                        </Table.Cell>
-                        <Table.Cell colSpan='4'>
-                            ₱{total.toFixed(2)}
-                        </Table.Cell>
-                    </Table.Row>
-                </Table.Body>
-            </Table>
+                <Modal
+                    centered
+                    isOpen={this.state.isPayment} className={this.props.className}>
+                    <ModalHeader>Receive Peyment</ModalHeader>
+                    <ModalBody>
+                        <Input className='w-100' placeholder={this.state.type ==='online' ? 'Enter transaction number' : 'Enter payment'} />
+                        <br />
+                        <Link to='/farmers-list' className='d-flex justify-content-around pt-4 pb-2'>
+                            <Button className='w-100' color="primary" onClick={this.successPayment}>Submit</Button>
+                        </Link>
+                    </ModalBody>
+                </Modal>
+            </div>
         );
     }
 }
