@@ -1,0 +1,136 @@
+[
+    {
+      "farmers": [
+        {
+          "id": 0,
+          "name": "Suarez Bridges",
+          "crops": [
+            {
+              "id": 0,
+              "name": "Donaldson Lowery",
+              "price": 79.99
+            },
+            {
+              "id": 1,
+              "name": "Goodwin Hampton",
+              "price": 79.99
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "name": "Brandi Cash",
+          "crops": [
+            {
+              "id": 0,
+              "name": "Fulton Sharpe",
+              "price": 79.99
+            },
+            {
+              "id": 1,
+              "name": "Mcconnell Crawford",
+              "price": 79.99
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Daphne Mcknight",
+          "crops": [
+            {
+              "id": 0,
+              "name": "Tia Velasquez",
+              "price": 79.99
+            },
+            {
+              "id": 1,
+              "name": "Briggs Gibson",
+              "price": 79.99
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Ebony Norton",
+          "crops": [
+            {
+              "id": 0,
+              "name": "Cornelia Gates",
+              "price": 79.99
+            },
+            {
+              "id": 1,
+              "name": "Dawson Thornton",
+              "price": 79.99
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Sweeney Hayes",
+          "crops": [
+            {
+              "id": 0,
+              "name": "Mercer Mccormick",
+              "price": 79.99
+            },
+            {
+              "id": 1,
+              "name": "Tyler Wheeler",
+              "price": 79.99
+            }
+          ]
+        }
+      ],
+      "crops": [
+        {
+          "id": 0,
+          "name": "Anne Nicholson",
+          "price": 79.99
+        },
+        {
+          "id": 1,
+          "name": "Perry Henry",
+          "price": 79.99
+        },
+        {
+          "id": 2,
+          "name": "Ruth Lloyd",
+          "price": 79.99
+        },
+        {
+          "id": 3,
+          "name": "Joanna Carlson",
+          "price": 79.99
+        },
+        {
+          "id": 4,
+          "name": "Vang Kane",
+          "price": 79.99
+        }
+      ],
+      "towns": [
+        {
+          "id": 0,
+          "name": "Kim Larsen",
+          "crop": [
+            {
+              "id": 0,
+              "name": "Esperanza Rosa",
+              "price": 79.99
+            },
+            {
+              "id": 1,
+              "name": "Richmond Kim",
+              "price": 79.99
+            },
+            {
+              "id": 2,
+              "name": "Ann Frost",
+              "price": 79.99
+            }
+          ]
+        }
+      ]
+    }
+  ]
