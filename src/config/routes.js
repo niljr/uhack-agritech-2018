@@ -10,6 +10,7 @@ import AddCrops from '../components/AddCrops';
 import Towns from '../components/Towns';
 import Farmer from '../components/Farmer';
 import PriceList from '../components/PriceList';
+import CropsList from '../components/CropsList';
 
 const routes = [
     {
@@ -36,6 +37,10 @@ const routes = [
     {
         path: '/price-list',
         main: () => <PriceList />
+    },
+    {
+        path: '/crops-list',
+        main: () => <CropsList />
     }
 ];
 
@@ -43,17 +48,17 @@ export default function getRoutes(isAuthed, dispatch, location) {
     return (
         <Router>
             <Row className='h-100'>
-                <Col lg={2} className='border-right' style={{ backgroundColor: 'cadetblue' }}>
+                <Col md={2} className='border-right' style={{ backgroundColor: '#f5f7f9' }}>
                 <Image src='/images/logo.jpg' size='small' />
                     <Nav vertical className='p-5'>
                         <NavItem>
-                            <Link to='/'><h1>Dashboard</h1></Link>
+                            <Link to='/'>Dashboard</Link>
                         </NavItem>
                         <NavItem>
-                            <Link to='/farmers-list'><h1>Farmers</h1></Link>
+                            <Link to='/farmers-list'>Farmers</Link>
                         </NavItem>
                         <NavItem>
-                            <Link to='/'>Crops</Link>
+                            <Link to='/crops-list'>Crops</Link>
                         </NavItem>
                         <NavItem>
                             <Link to='/towns'>Towns</Link>
@@ -79,7 +84,7 @@ export default function getRoutes(isAuthed, dispatch, location) {
                     ))}
                 </Col>
 
-                <Col lg={10} className='dashboard__content p-5'>
+                <Col md={10} className='dashboard__content p-5'>
                     {routes.map((route, index) => (
                         <Route
                             key={index}
