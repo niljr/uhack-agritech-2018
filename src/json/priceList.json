@@ -1,14 +1,14 @@
 [
     {
         "key": "5b9d01c5329592b030dcb1a5",
-        "availableQty": 2400,
+        "availableQty": 69,
         "description": "Rice",
         "unit": "kg",
         "price": 18.99
     },
     {
         "key": "5b9d01c5827165c0e7f8af64",
-        "availableQty": 4100,
+        "availableQty": 99,
         "description": "Corn",
         "unit": "kg",
         "price": 26.64
@@ -43,63 +43,63 @@
     },
     {
         "key": "5b9d01c55dc9ccab58209c43",
-        "availableQty": 48,
+        "availableQty": 55,
         "description": "Baguio Beans",
         "unit": "kg",
         "price": 19.51
     },
     {
         "key": "5b9d01c55dc9ccab58209c44",
-        "availableQty": 48,
+        "availableQty": 22,
         "description": "Squash",
         "unit": "kg",
         "price": 26.51
     },
     {
         "key": "5b9d01c55dc9ccab58209c45",
-        "availableQty": 48,
+        "availableQty": 31,
         "description": "Ampalaya",
         "unit": "kg",
         "price": 9.51
     },
     {
         "key": "5b9d01c55dc9ccab58209c46",
-        "availableQty": 48,
+        "availableQty": 67,
         "description": "Okra",
         "unit": "kg",
         "price": 10.51
     },
     {
         "key": "5b9d01c55dc9ccab58209c47",
-        "availableQty": 48,
+        "availableQty": 23,
         "description": "Yard-long Beans (Sitao)",
         "unit": "kg",
         "price": 29.51
     },
     {
         "key": "5b9d01c55dc9ccab58209c48",
-        "availableQty": 48,
+        "availableQty": 81,
         "description": "Eggplant",
         "unit": "kg",
         "price": 25.51
     },
     {
         "key": "5b9d01c55dc9ccab58209c49",
-        "availableQty": 48,
+        "availableQty": 51,
         "description": "Tomato",
         "unit": "kg",
         "price": 9.31
     },
     {
         "key": "5b9d01c55dc9ccab58209c50",
-        "availableQty": 48,
+        "availableQty": 21,
         "description": "Onion",
         "unit": "kg",
         "price": 9.51
     },
     {
         "key": "5b9d01c55dc9ccab58209c42",
-        "availableQty": 48,
+        "availableQty": 10,
         "description": "Garlic",
         "unit": "kg",
         "price": 19.51
