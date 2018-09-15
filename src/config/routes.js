@@ -3,6 +3,7 @@ import Dashboard from '../components/Dashboard';
 import AddFarmer from '../components/AddFarmer';
 import FarmersList from '../components/FarmersList';
 import AddCrops from '../components/AddCrops';
+import Towns from '../components/Towns';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Grid } from 'semantic-ui-react';
 
@@ -19,6 +20,10 @@ const routes = [
     {
         path: '/farmers-list',
         main: () => <FarmersList />
+    },
+    {
+        path: '/towns',
+        main: () => <Towns />
     }
 ];
 
@@ -43,6 +48,9 @@ export default function getRoutes(isAuthed, dispatch, location) {
                             </li>
                             <li>
                                 <Link to='/'>Crops List</Link>
+                            </li>
+                            <li>
+                                <Link to='/towns'>Towns</Link>
                             </li>
                             <li>
                                 <Link to='/'>Products Inventory</Link>

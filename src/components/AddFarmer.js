@@ -15,6 +15,7 @@ class AddFarmer extends React.Component {
                         <Form.Input label='Phone' placeholder='Phone' />
                     </Form.Group>
                         <Form.Input label='Account Number' placeholder='#' />
+                        <Form.Input label='Area Farmer' placeholder='Area Farmer' />
                     <Button type='submit'>SAVE</Button>
                 </Form>
            </div>
