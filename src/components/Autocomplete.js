@@ -124,7 +124,6 @@ export default class AutocompleteInput extends PureComponent {
     filterList = (value) => {
         if (value) {
             return this.props.list.filter(item => {
-                console.log(item, value)
                 if (this.props.isAlphabetical) {
                     return item.toLowerCase().startsWith(value.toLowerCase());
                 }
