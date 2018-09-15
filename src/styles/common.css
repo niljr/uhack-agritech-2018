@@ -37,3 +37,7 @@ a:hover {
 .farmers-list-card {
     border: none;
 }
+
+.logo {
+    padding: 2rem;
+}

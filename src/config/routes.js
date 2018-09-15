@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col, Nav, NavItem } from 'reactstrap';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { Image, Label, Menu } from 'semantic-ui-react'
+import { Icon, Image, Label, Menu } from 'semantic-ui-react'
 
 import Dashboard from '../components/Dashboard';
 import AddFarmer from '../components/AddFarmer';
@@ -49,7 +49,8 @@ export default function getRoutes(isAuthed, dispatch, location) {
         <Router>
             <Row className='h-100'>
                 <Col md={2} className='border-right' style={{ backgroundColor: '#f5f7f9' }}>
-                <Image src='/images/logo.jpg' size='small' />
+                {/* <Image src='/images/logo.jpg' size='small' /> */}
+                <Icon name='leaf' size='massive' color='teal' className='logo'/>
                     <Nav vertical className='p-5'>
                         <NavItem>
                             <Link to='/'>Dashboard</Link>
