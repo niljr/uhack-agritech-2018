@@ -42,6 +42,7 @@ a:hover {
     display: flex !important;
     display: -ms-flexbox !important;
 }
+
 .logo {
     padding: 2rem;
 }
