@@ -3,46 +3,42 @@ import { Grid, Image, Header, Icon } from 'semantic-ui-react'
 
 import Town from './Town';
 
+const colors = [
+    'red',
+    'orange',
+    'yellow',
+    'olive',
+    'green',
+    'teal',
+    'blue',
+    'violet',
+    'purple',
+    'pink',
+    'brown',
+    'grey',
+    'black',
+]
+
 class Towns extends React.Component {
     render() {
         return (
            <div>
                <Header as='h2'>
                     <Icon name='warehouse' />
-                    <Header.Content>
-                    Centers
-                    <Header.Subheader>as of September 16, 2018</Header.Subheader>
+                        <Header.Content>
+                        Centers
+                        <Header.Subheader>as of September 16, 2018</Header.Subheader>
                     </Header.Content>
                 </Header>
-                <Grid relaxed columns={5} mt='4'>
-                    <Grid.Column>
-                        <Town title='Alimodian'/>
-                    </Grid.Column>
-                    <Grid.Column>
-                        <Town title='Capiz'/>
-                    </Grid.Column>
-                    <Grid.Column>
-                        <Town title='Lambonao'/>
-                    </Grid.Column>
-                    <Grid.Column>
-                        <Town title='Antique'/>
-                    </Grid.Column>
-                    <Grid.Column>
-                        <Town title='Tubungan'/>
-                    </Grid.Column>
-                    <Grid.Column>
-                        <Town title='San miguel'/>
-                    </Grid.Column>
-                    <Grid.Column>
-                        <Town title='Tapaz'/>
-                    </Grid.Column>
-                    <Grid.Column>
-                        <Town title='Jamindan'/>
-                    </Grid.Column>
-                    <Grid.Column>
-                        <Town title='Libacao'/>
-                    </Grid.Column>
-                </Grid>
+                <Town title='Alimodian' color={colors[0]}/>
+                <Town title='Capiz' color={colors[1]}/>
+                <Town title='Lambonao' color={colors[2]}/>
+                <Town title='Antique' color={colors[3]}/>
+                <Town title='Tubungan' color={colors[4]}/>
+                <Town title='San miguel' color={colors[5]}/>
+                <Town title='Tapaz' color={colors[6]}/>
+                <Town title='Jamindan' color={colors[7]}/>
+                <Town title='Libacao' color={colors[7]}/>
            </div>
         );
     }
