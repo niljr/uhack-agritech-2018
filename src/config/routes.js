@@ -9,7 +9,7 @@ import FarmersList from '../components/FarmersList';
 import AddCrops from '../components/AddCrops';
 import Towns from '../components/Towns';
 import Farmer from '../components/Farmer';
-import PriceList from '../components/PriceList';
+import Broadcast from '../components/Broadcast';
 import CropsList from '../components/CropsList';
 
 const routes = [
@@ -35,8 +35,8 @@ const routes = [
         main: () => <Farmer />
     },
     {
-        path: '/price-list',
-        main: () => <PriceList />
+        path: '/broadcast',
+        main: () => <Broadcast />
     },
     {
         path: '/crops-list',
@@ -65,7 +65,7 @@ export default function getRoutes(isAuthed, dispatch, location) {
                             <Link to='/towns'>Towns</Link>
                         </NavItem>
                         <NavItem>
-                            <Link to='/price-list'>Price List</Link>
+                            <Link to='/broadcast'>Broadcast</Link>
                         </NavItem>
                     </Nav>
                     {/* <Menu fluid vertical tabular>

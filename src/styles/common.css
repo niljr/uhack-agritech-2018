@@ -38,6 +38,11 @@ a:hover {
     border: none;
 }
 
+.ui.active.dimmer.modals.transition {
+    display: flex !important;
+    display: -ms-flexbox !important;
+}
+
 .logo {
     padding: 2rem;
 }
