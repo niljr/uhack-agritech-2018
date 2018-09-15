@@ -2,8 +2,9 @@ import React, { PureComponent } from 'react';
 import { Col, Row, Card, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import Spinner from './Spinner';
-import { Header, Icon } from 'semantic-ui-react';
+import { Header, Icon, Label, Image, Button } from 'semantic-ui-react';
 import farmers from '../json/data.json';
+import '../styles/common.css';
 
 export default class FarmersList extends PureComponent {
     state = {
@@ -19,14 +20,15 @@ export default class FarmersList extends PureComponent {
     render() {
         return (
             <div>
-                <Header as='h2'>
-                    <Icon name='users' />
-                    <Header.Content>
-                    Farmers
-                    <Header.Subheader>as of September 16, 2018</Header.Subheader>
-                    </Header.Content>
-                </Header>
-            
+                <div style={{ display: 'flex', justifyContent:'space-between' }}>
+                    <Header as='h2'>
+                        <Icon name='users' />
+                        <Header.Content>
+                        Farmers
+                        </Header.Content>
+                    </Header>
+                    <Button content='ADD FARMER' style={{ backgroundColor:'#515689', color: '#fff' }} />
+                </div>
                 <div className='d-flex flex-column align-items-center'>
                     
                     {this.state.isLoading
@@ -35,21 +37,21 @@ export default class FarmersList extends PureComponent {
                             {farmers.map(farmer => 
                                 <Col className='col-6 px-2'>
                                     <Link to={`/farmer/${farmer._id}`}>
-                                        <Card key={farmer._id} className='m-2 p-3'>
-                                            <CardBody className='p-0'>
+                                        <Card key={farmer._id} className='m-2 p-3 farmers-list-card' >
+                                            <CardBody className='p-0' className='shadow'>
                                                 <Row>
                                                     <Col>
-                                                        <CardTitle>{farmer.name}</CardTitle>
-                                                        <CardSubtitle>{farmer.phone}</CardSubtitle>
-                                                        <CardText>{farmer.address}</CardText>
+                                                        <CardTitle style={{ color: '#6697a7' }}>{farmer.name}</CardTitle>
+                                                        <CardSubtitle><Icon name='phone' />{farmer.phone}</CardSubtitle>
+                                                        <CardText><Icon name='map marker alternate' />{farmer.address}</CardText>
                                                         <CardText>
-                                                            <p>
+                                                            <p style={{ color: '#8ccdc2' }}>
                                                                 {farmer.crops.map((crop, i) => `${crop.name}${farmer.crops.length - 1 !== i ? ',' : ''} `)}
                                                             </p>
                                                         </CardText>
                                                     </Col>
                                                     <Col className='col-3 text-right'>
-                                                        <img src={farmer.picture} alt={farmer.name} className='h-100' />
+                                                        <Image src={farmer.picture} alt={farmer.name}  size='small' circular/>
                                                     </Col>
                                                 </Row>
                                             </CardBody>
