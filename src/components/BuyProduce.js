@@ -16,7 +16,7 @@ export default class BuyProduce extends PureComponent {
 
     handleSumbit = async (total) => {
         await this.setState({
-            total
+            total: total.toFixed(2)
         });
 
         this.handleToggle();
@@ -37,13 +37,12 @@ export default class BuyProduce extends PureComponent {
     }
 
     successPayment = async () => {
-        if (this.state.amount) {
-
+        if (this.state.total) {
             try {
                 const { state } = await fetch('https://api-uat.unionbankph.com/partners/sb/online/v1/transfers/single', {
                     'method': 'post',
                     'headers': {
-                        'Authorization': 'Bearer AAEkYTczZjQ1MjYtOWU0ZC00OGU0LTk5ZmItMjQ2YTQ4MmNlMTA2zzYgKvuXBrcXoZ4ZaNjm2bgKpQi-TKCifqFACNvcMw_FbDMSmooAwrn1NgJIQM-XO4a7_ze3CCOHus01E2RlhTe6j8kqggLA1vCYvs15rkSHKD9TlCurxFk_eof_DKcakuw9mQ1ZnncFL23qvKgq06qrFmwHj91ra1qZuzF9EdcXBxu_Wm50cOBi9mnNItr9XuRC6lslkPV4RskusZ_SO0U6mQ-wdkIdvhSIJYVqQhLRmEs83yOMkCht5hPxK8BI0alGeNnBFGmuuC5hXLrpfUvkcLv_Oov349LLzNJu7erDPZfeFN1MuHx8aVqA9K09y0WX6SaaC_LaqSp6ZzipKw',
+                        'Authorization': 'Bearer AAEkYTczZjQ1MjYtOWU0ZC00OGU0LTk5ZmItMjQ2YTQ4MmNlMTA2q3jkHovFaY_x7JCg9GxgNzWNZ-fqXOTyhXnscnnmN5jj6XvLeXHaFOArPIa59R44O38lUEeZMrdbfZ5RwWDkc84aS-5wg8SKYpzAB5SjzmnqOI8_3wvaXY-7OgayYpQryNDXCaubyWtQ_PsLJOIr8CFlr89OtTCakS7YGkmqNLf74X1H9VMtcx3nd9tLIe0HH6YiD033ii-79KSJ2FYZZUD06k0uJCjg2GZaze3Zhfq5RrxS9EnXYWKEU9fZ6FbhGYJj5IS4uD0QwVRIZDJKtR-81SWO-X-N8C0DHWcRXP4qd1lXuGTsVFbrLTsU5fiG8o4qQMRJFfs04uoNvgUBSQ',
                         'Content-Type': 'application/json',
                         'x-ibm-client-id': 'a73f4526-9e4d-48e4-99fb-246a482ce106',
                         'x-ibm-client-secret': 'B1hN5rE7tR0gY1fU7rO8xN6oK4sP3mV7qB6qL3hA3hU3wI8kD5',
@@ -55,7 +54,7 @@ export default class BuyProduce extends PureComponent {
                         "accountNo": "107897014642",
                         "amount": {
                           "currency": "PHP",
-                          "value": this.state.amount
+                          "value": this.state.total
                         },
                         "remarks": "Transfer remarks",
                         "particulars": "Transfer particulars",
@@ -78,7 +77,7 @@ export default class BuyProduce extends PureComponent {
                     isPayment: false
                 })
                 
-                alert(state);
+                alert(`Successfully transferred ₱${this.state.total}`);
             }
             catch (err) {
                 console.log('err', err);
@@ -122,7 +121,7 @@ export default class BuyProduce extends PureComponent {
                     isOpen={this.state.isPayment} className={this.props.className}>
                     <ModalHeader>Transfer Payment</ModalHeader>
                     <ModalBody>
-                        <Input className='w-100' placeholder='Enter amount' value={this.state.amount} onChange={this.handleAmount}/>
+                        <Input className='w-100' placeholder='Enter amount' value={`₱${this.state.total}`}/>
                         <br />
                         <Link to='/farmers-list' className='d-flex justify-content-around pt-4 pb-2'>
                             <Button className='w-100' color="primary" onClick={this.successPayment}>Submit</Button>
