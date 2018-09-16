@@ -122,7 +122,7 @@ export default class Invoice extends PureComponent {
                                 {input.price}
                             </Table.Cell>
                             <Table.Cell className='d-flex justify-conten-between'>
-                                <p className='w-75'>{input.total}</p>
+                                <p className='w-75'>{input.total.toFixed(2)}</p>
                             </Table.Cell>
                         </Table.Row>
                     )}
