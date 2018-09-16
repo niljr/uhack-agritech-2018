@@ -141,8 +141,8 @@ export default class Invoice extends PureComponent {
                         <Table.Row>
                             <Table.HeaderCell colSpan='4' textAlign='right'>
                                 <Button
-                                    onClick={() => this.props.onSumbit(total)}
-                                    floated='right' icon labelPosition='left' primary size='small'>
+                                    onClick={() => this.props.onSubmit(total)}
+                                    floated='right' icon labelPosition='left' primary size='small' color='teal'>
                                     <Icon name='money bill alternate outline' /> Receive Payment
                                 </Button>
                             </Table.HeaderCell>

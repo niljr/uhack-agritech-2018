@@ -54,7 +54,7 @@ export default class SellInputs extends PureComponent {
                 <Invoice
                     type='sell'
                     data={inputs}
-                    onSumbit={this.handleSumbit}/>
+                    onSubmit={this.handleSumbit}/>
                 
                 <Modal
                     centered
