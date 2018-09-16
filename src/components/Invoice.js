@@ -143,7 +143,7 @@ export default class Invoice extends PureComponent {
                                 <Button
                                     onClick={() => this.props.onSubmit(total)}
                                     floated='right' icon labelPosition='left' primary size='small' color='teal'>
-                                    <Icon name='money bill alternate outline' /> Receive Payment
+                                    <Icon name='money bill alternate outline' /> {this.props.type === 'buy' ? 'Send Payment' : 'Receive Payment'}
                                 </Button>
                             </Table.HeaderCell>
                         </Table.Row>
