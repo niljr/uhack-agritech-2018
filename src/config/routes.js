@@ -6,11 +6,13 @@ import { Icon, Image, Label, Menu } from 'semantic-ui-react'
 import Dashboard from '../components/Dashboard';
 import AddFarmer from '../components/AddFarmer';
 import FarmersList from '../components/FarmersList';
-import AddCrops from '../components/AddCrops';
+import AddCrop from '../components/AddCrop';
 import Towns from '../components/Towns';
 import Farmer from '../components/Farmer';
 import Broadcast from '../components/Broadcast';
 import CropsList from '../components/CropsList';
+import Rental from '../components/Rental';
+import '../styles/common.css';
 
 const routes = [
     {
@@ -19,8 +21,12 @@ const routes = [
         main: () => <Dashboard />
     },
     {
-        path: '/add-farmers',
+        path: '/add-farmer',
         main: () => <AddFarmer />
+    },
+    {
+        path: '/add-crop',
+        main: () => <AddCrop />
     },
     {
         path: '/farmers-list',
@@ -39,6 +45,10 @@ const routes = [
         main: () => <Broadcast />
     },
     {
+        path: '/rental',
+        main: () => <Rental />
+    },
+    {
         path: '/crops-list',
         main: () => <CropsList />
     }
@@ -53,19 +63,22 @@ export default function getRoutes(isAuthed, dispatch, location) {
                 <Icon name='leaf' size='massive' color='teal' className='logo'/>
                     <Nav vertical className='p-5'>
                         <NavItem>
-                            <Link to='/'>Dashboard</Link>
+                            <Link to='/'><Icon name='chart bar' />Dashboard</Link>
                         </NavItem>
                         <NavItem>
-                            <Link to='/farmers-list'>Farmers</Link>
+                            <Link to='/farmers-list'><Icon name='users' /> Farmers</Link>
                         </NavItem>
                         <NavItem>
-                            <Link to='/crops-list'>Crops</Link>
+                            <Link to='/crops-list'><Icon name='theme' />Crops</Link>
                         </NavItem>
                         <NavItem>
-                            <Link to='/towns'>Towns</Link>
+                            <Link to='/towns'><Icon name='warehouse' /> Centers</Link>
                         </NavItem>
                         <NavItem>
-                            <Link to='/broadcast'>Broadcast</Link>
+                            <Link to='/rental'><Icon name='truck' /> Rentals</Link>
+                        </NavItem>
+                        <NavItem>
+                            <Link to='/broadcast'><Icon name='mobile' />Broadcast</Link>
                         </NavItem>
                     </Nav>
                     {/* <Menu fluid vertical tabular>

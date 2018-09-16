@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Form } from 'semantic-ui-react'
 
-class AddCrops extends React.Component {
+class AddCrop extends React.Component {
     render() {
         return (
            <div>
@@ -17,4 +17,4 @@ class AddCrops extends React.Component {
     }
 }
 
-export default AddCrops;
+export default AddCrop;

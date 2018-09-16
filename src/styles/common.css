@@ -46,3 +46,22 @@ a:hover {
 .logo {
     padding: 2rem;
 }
+
+.nav-item {
+    padding: 20px 0;
+}
+
+.nav-item > a {
+    color: #000;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    text-decoration: none;
+    -webkit-transition: color .1s;
+    transition: color .1s;
+    padding: 50px 0 
+}
+
+.contact {
+    float: right;
+}

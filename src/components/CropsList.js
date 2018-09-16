@@ -1,5 +1,6 @@
 import React from 'react';
 import { Table, Icon, Header, Button } from 'semantic-ui-react'
+import { Link } from 'react-router-dom';
 
 import '../styles/common.css';
 import Town from './Town';
@@ -28,13 +29,13 @@ class CropsList extends React.Component {
                     <React.Fragment>
                         <div style={{ display: 'flex', justifyContent:'space-between' }}>
                             <Header as='h2'>
-                                <Icon name='users' />
+                                <Icon name='theme' />
                                 <Header.Content>
                                     Crops List
                                 <Header.Subheader>as of September 16, 2018</Header.Subheader>
                                 </Header.Content>
                             </Header>
-                            <Button content='ADD CROP' style={{ backgroundColor:'#515689', color: '#fff' }} />
+                            <Link to='/add-crop'><Button content='ADD CROP' style={{ backgroundColor:'#515689', color: '#fff' }} /></Link>
                         </div>
                         <Table singleLine celled structured className='mt-4' className='shadow'>
                             <Table.Header>
