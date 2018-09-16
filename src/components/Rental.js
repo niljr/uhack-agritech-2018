@@ -1,41 +1,34 @@
 import React from 'react'
-import { Form, Input, TextArea, Button, Header, Icon } from 'semantic-ui-react'
+import { Form, Input, TextArea, Button, Header, Icon, Dropdown } from 'semantic-ui-react'
 
+const stateOptions = [
+    {
+        key: 'HD',
+        value: 'hand-tractor',
+        text:'Hand Tractor',
+       
+    },
+    {
+        key: 'cul',
+        value: 'cultivator',
+        text:'Cultivator',
+    }
+]
 const Rental = () => (
     <div>
         <Header as='h2'>
-                        <Icon name='mobile' />
-                        <Header.Content>
-                           Rental
-                        </Header.Content>
-                    </Header>
+            <Icon name='truck' />
+            <Header.Content>
+                Rental
+            </Header.Content>
+        </Header>
   <Form>
     <Form.Group widths='equal'>
-      <Form.Field
-        id='form-input-control-first-name'
-        control={Input}
-        label='First name'
-        placeholder='First name'
-      />
-      <Form.Field
-        id='form-input-control-last-name'
-        control={Input}
-        label='Last name'
-        placeholder='Last name'
-      />
+      <Dropdown placeholder='Tractor' search selection options={stateOptions} />
+      <Input placeholder='From' />
+      <Input placeholder='To' />
+      <Button content='Rent'/>
     </Form.Group>
-    <Form.Field
-      id='form-textarea-control-opinion'
-      control={TextArea}
-      label='Opinion'
-      placeholder='Opinion'
-    />
-    <Form.Field
-      id='form-button-control-public'
-      control={Button}
-      content='Confirm'
-      label='Label with htmlFor'
-    />
   </Form>
   </div>
 
