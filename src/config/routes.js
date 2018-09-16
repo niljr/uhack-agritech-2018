@@ -74,9 +74,9 @@ export default function getRoutes(isAuthed, dispatch, location) {
                         <NavItem>
                             <Link to='/towns'><Icon name='warehouse' /> Centers</Link>
                         </NavItem>
-                        <NavItem>
+                        {/* <NavItem>
                             <Link to='/rental'><Icon name='truck' /> Rentals</Link>
-                        </NavItem>
+                        </NavItem> */}
                         <NavItem>
                             <Link to='/broadcast'><Icon name='mobile' />Broadcast</Link>
                         </NavItem>

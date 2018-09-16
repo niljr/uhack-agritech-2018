@@ -2,7 +2,7 @@
   {
     "_id": "5b9cb4094c29ad2c7eb0d1f6",
     "balance": "3,830.29",
-    "picture": "./images/berna.png",
+    "picture": "https://randomuser.me/api/portraits/med/women/65.jpg",
     "age": 28,
     "name": "Eloise Meadows",
     "gender": "female",
