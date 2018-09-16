@@ -51,7 +51,7 @@ class PriceList extends React.Component {
             <div>
                 <div style={{ display: 'flex', justifyContent:'space-between' }}>
                     <Header as='h2'>
-                        <Icon name='users' />
+                        <Icon name='mobile' />
                         <Header.Content>
                            Broadcast
                         </Header.Content>

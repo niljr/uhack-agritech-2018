@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Bar } from 'react-chartjs-2';
+import { Grid, Image, Header, Icon } from 'semantic-ui-react'
 
 import Statistics from './Statistics';
 import priceList from '../json/priceList';
@@ -20,8 +21,15 @@ export default class Dashboard extends PureComponent {
         console.log(qty)
         return (
             <div>
+                <Header as='h2'>
+                    <Icon name='chart bar' />
+                        <Header.Content>
+                        Dashboard
+                    </Header.Content>
+                </Header>
                 <Statistics />
                 <Bar
+                    className='mt-5'
                     data={{
                         labels: labels,
                         datasets: [{

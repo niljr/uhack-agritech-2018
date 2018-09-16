@@ -27,7 +27,7 @@ export default class FarmersList extends PureComponent {
                         Farmers
                         </Header.Content>
                     </Header>
-                    <Button content='ADD FARMER' style={{ backgroundColor:'#515689', color: '#fff' }} />
+                    <Link to={`/add-farmer`}><Button content='ADD FARMER' style={{ backgroundColor:'#515689', color: '#fff' }} /></Link>
                 </div>
                 <div className='d-flex flex-column align-items-center'>
                     

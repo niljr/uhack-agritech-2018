@@ -1,10 +1,16 @@
 import React from 'react';
-import { Button, Form } from 'semantic-ui-react'
+import { Button, Form, Header, Icon } from 'semantic-ui-react'
 
 class AddFarmer extends React.Component {
     render() {
         return (
            <div>
+               <Header as='h2'>
+                    <Icon name='add user' />
+                    <Header.Content>
+                        Add new farmer
+                    </Header.Content>
+                </Header>
                 <Form>
                     <Form.Group unstackable widths={2}>
                         <Form.Input label='First name' placeholder='First name' />
